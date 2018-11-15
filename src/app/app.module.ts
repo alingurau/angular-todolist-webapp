@@ -3,18 +3,25 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TasksComponent } from './module/components/tasks/tasks.component';
-import { DashboardComponent } from './module/components/dashboard/dashboard.component';
+import { TaskModule } from './components/task/task.module';
+import { DashboardComponent } from './components/dashboard/pages/dashboard-index/dashboard.component';
+import { TaskIndexComponent } from './components/task/pages/task-index/task-index.component';
+import { AuthIndexComponent } from './components/auth/pages/auth-index/auth-index.component';
+import { AuthModule } from './components/auth/auth.module';
+import { AuthRoutingModule } from './components/auth/auth-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TasksComponent,
-    DashboardComponent
+    DashboardComponent,
+    AuthIndexComponent
   ],
   imports: [
+    AuthModule,
+    AuthRoutingModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]
