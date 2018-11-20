@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/pages/dashboard-index/dashboard.component';
+import { LoginComponent } from './components/login/pages/login/login.component';
 
 const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
+  { path: '/dashboard', component: DashboardComponent },
+  { path: '/login', component: LoginComponent },
+
   // { path: 'tasks', loadChildren: './task/task.module#TaskModule' },
 ];
 

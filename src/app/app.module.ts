@@ -5,9 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TaskModule } from './components/task/task.module';
 import { DashboardComponent } from './components/dashboard/pages/dashboard-index/dashboard.component';
-import { UserLoginComponent } from './components/login/pages/login/user-login.component';
-import { AuthModule } from './components/login/auth.module';
-import { AuthRoutingModule } from './components/login/auth-routing.module';
+import { LoginComponent } from './components/login/pages/login/login.component';
+import { LoginModule } from './components/login/login.module';
+import { LoginRoutingModule } from './components/login/login-routing.module';
 import { UserComponent } from './components/user/pages/user-index/user.component';
 import { FormsModule } from '@angular/forms';
 
@@ -16,13 +16,13 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     DashboardComponent,
     UserComponent,
-    UserLoginComponent
+    LoginComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
-    AuthModule,
-    AuthRoutingModule,
+    LoginModule,
+    LoginRoutingModule,
     AppRoutingModule,
     TaskModule,
   ],
