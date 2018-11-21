@@ -1,7 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
-import { config } from 'process';
+import { Observable } from 'rxjs';
+
+const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
     providedIn: 'root'
@@ -9,14 +13,13 @@ import { config } from 'process';
 
 export class UserService {
 
-    apiUrl: 'localhost:8080';
+    private usersUrl: 'localhost:8080/rest/user/users';
 
     constructor(
         private http: HttpClient) { }
 
-    getAll() {
-        return this.http.get<User[]>(`${config.apiUrl}/users`);
-
+    getUsers(): Observable<User[]> {
+        return this.http.get<User[]>(this.usersUrl);
     }
 
 }

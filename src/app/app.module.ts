@@ -10,6 +10,8 @@ import { LoginModule } from './components/login/login.module';
 import { LoginRoutingModule } from './components/login/login-routing.module';
 import { UserComponent } from './components/user/pages/user-index/user.component';
 import { FormsModule } from '@angular/forms';
+import { UserModule } from './components/user/pages/user.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { FormsModule } from '@angular/forms';
     LoginRoutingModule,
     AppRoutingModule,
     TaskModule,
+    UserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
