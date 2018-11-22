@@ -19,7 +19,7 @@ export class LoginFormComponent implements OnInit {
 
   login() {
     this.authService.login(this.entity.username, this.entity.password).subscribe(
-      () => console.log('sent')
+      (token) => console.log(token)
     );
     console.log(this.entity);
   }

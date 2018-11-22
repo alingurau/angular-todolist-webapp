@@ -18,6 +18,10 @@ export class AuthenticationService {
         return this.http.post<any>(`${environment.url}/token`, { username, password });
     }
 
+    register(firstName: string, lastName: string, email: string, password: string) {
+        return this.http.post<any>(`${environment.url}/user/add`, { firstName, lastName, email, password});
+    }
+
     logout() {
         localStorage.removeItem('currentUser');
     }
