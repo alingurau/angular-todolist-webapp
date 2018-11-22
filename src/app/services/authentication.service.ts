@@ -1,7 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { config } from 'rxjs/internal/config';
+
+const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
@@ -10,6 +12,9 @@ export class AuthenticationService {
 
     constructor(private http: HttpClient) { }
 
+    getToken() {
+        return this.http.get(this.url + '/token');
+    }
     // login(username: string, password: string) {
     //     return this.http.post<any>(`${config.url}/users/authenticate`, { username, password })
     //         .pipe(map(user => {

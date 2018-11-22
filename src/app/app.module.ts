@@ -5,26 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TaskModule } from './components/task/task.module';
 import { DashboardComponent } from './components/dashboard/pages/dashboard-index/dashboard.component';
-import { LoginComponent } from './components/login/pages/login/login.component';
-import { LoginModule } from './components/login/login.module';
-import { LoginRoutingModule } from './components/login/login-routing.module';
 import { UserComponent } from './components/user/pages/user-index/user.component';
-import { FormsModule } from '@angular/forms';
 import { UserModule } from './components/user/pages/user.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     UserComponent,
-    LoginComponent
   ],
   imports: [
-    FormsModule,
     BrowserModule,
-    LoginModule,
-    LoginRoutingModule,
+    AuthModule,
     AppRoutingModule,
     TaskModule,
     UserModule,
