@@ -16,10 +16,12 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit() {
   }
-
   login() {
-    this.authService.login(this.entity.username, this.entity.password).subscribe(
-      (token) => console.log(token)
+    this.authService.login(this.entity).subscribe(
+      (token) => {
+        this.authService.setToken(token);
+        console.log(token);
+      }
     );
     console.log(this.entity);
   }

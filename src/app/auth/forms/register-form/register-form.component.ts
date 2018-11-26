@@ -18,8 +18,10 @@ export class RegisterFormComponent implements OnInit {
   }
 
   register() {
-    this.authService.register(this.entity.firstName, this.entity.lastName, this.entity.email, this.entity.password ).subscribe(
-      (user) => console.log(user)
+    this.authService.register(
+      this.entity
+      ).subscribe(
+      (user) => user
     );
     console.log(this.entity);
   }
