@@ -13,13 +13,13 @@ const httpOptions = {
 
 export class UserService {
 
-    private usersUrl: 'localhost:8080/rest/user/users';
+    private usersUrl: 'localhost:8080';
 
     constructor(
         private http: HttpClient) { }
 
     getUsers(): Observable<User[]> {
-        return this.http.get<User[]>(this.usersUrl);
+        return this.http.get<User[]>(this.usersUrl + '/rest/user/users');
     }
 
 
